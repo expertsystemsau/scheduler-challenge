@@ -1,0 +1,17 @@
+Hi there, this will outline the task at hand.
+
+This is a packaged example from Bryntum's example repository implementing the Crud Manager approach.
+
+Read more here: 
+https://www.bryntum.com/docs/scheduler/#guides/data/crud_manager.md
+
+Out of the box, this uses the Fetch API. This will need to be converted to transact via Axios instead. 
+See relevent class's here:
+https://www.bryntum.com/docs/scheduler/#Scheduler/crud/AbstractCrudManager
+
+The original code is included at ./AjaxTransport.js. You will use this as a reference to create varios override methods (sendRequest, cancelRequest) that will use Axios instead. 
+
+Since our trial has expired, you will also need to bypass the trial expiry limitations. You'll notice after a few minutes a overlay activates. 
+
+This will need to be run in a webserver, you could use PHP's inbuilt web server as an example!
+php -S localhost:8000
