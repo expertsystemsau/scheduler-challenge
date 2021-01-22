@@ -7,7 +7,7 @@ https://www.bryntum.com/docs/scheduler/#guides/data/crud_manager.md
 
 ~~ Task 1
 Since our trial has expired, you will also need to bypass the trial expiry limitations. You'll notice after a few minutes a overlay activates which blocks further use and disables the data fetching.
-Find a way to get around this; whether through code or other means. 
+Find a way to get around this; whether through code or other means. The solution will not involve modifying the source code in the build directory.
 
 ~~ Task 2
 Out of the box, this uses the Fetch API. This will need to be converted to transact via Axios instead. 
