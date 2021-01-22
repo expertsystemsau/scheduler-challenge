@@ -254,7 +254,7 @@ var AjaxTransport = (Target => class AjaxTransport extends (Target || Base) {
 	  delete requestConfig.params;
 	  let responsePromise;
 	  const fetchOptions = Objects.assign({}, requestConfig, requestConfig.fetchOptions),
-			  ajaxPromise = AjaxHelper.fetch(requestConfig.url, fetchOptions);
+			  ajaxPromise = AjaxHelper.fetch(requestConfig.url, `fetchOptions`);
 	  ajaxPromise.catch(error => {
 		 const signal = fetchOptions.abortController && fetchOptions.abortController.signal;
  

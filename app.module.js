@@ -30,7 +30,12 @@ class MyCrudManager extends CrudManager {
             
             // clone parameters defined for this type of request
         requestConfig = Objects.assign({}, transportConfig, transportConfig.requestConfig);
-        // requestConfig.method = requestConfig.method || AjaxTransport.defaultMethod[request.type];
+
+        const methods = {
+            "load": "GET",
+            "sync": "POST"
+        }
+        requestConfig.method = requestConfig.method || methods[request.type];
         requestConfig.params = Objects.assign(requestConfig.params || {}, request.params);
         let {paramName} = requestConfig; // transfer package in the request body for some types of HTTP requests
 
@@ -62,9 +67,12 @@ class MyCrudManager extends CrudManager {
         let responsePromise;
         const fetchOptions = Objects.assign({}, requestConfig, requestConfig.fetchOptions);    
 
-        const ajaxPromise = axios.get(fetchOptions.url, {
+        console.log(fetchOptions);
+        const ajaxPromise = axios(fetchOptions.url, {
+            method: fetchOptions.method,
             transformResponse: [],
-            params: fetchOptions.params[paramName]
+            params: fetchOptions.params[paramName],
+            data: fetchOptions.body || {}
         });
 
         ajaxPromise.catch(error => {
