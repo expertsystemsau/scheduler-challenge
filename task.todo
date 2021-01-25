@@ -6,15 +6,15 @@ Read more here:
 https://www.bryntum.com/docs/scheduler/#guides/data/crud_manager.md
 
 ~~ Task 1
-Since our trial has expired, you will also need to bypass the trial expiry limitations. You'll notice after a few minutes a overlay activates which blocks further use and disables the data fetching.
+Since our trial has expired, you will need to bypass the trial expiry limitations. You'll notice after a short time of loading the page, an overlay activates which blocks further use and disables the data fetching.
 Find a way to get around this; whether through code or other means. The solution will not involve modifying the source code in the build directory.
 
 ~~ Task 2
-Out of the box, this uses the Fetch API. This will need to be converted to transact via Axios instead. 
+Out of the box, Bryntum Scheduler's transport layer uses the Fetch API. This will need to be converted to transact via Axios instead.
 See relevent class's here:
 https://www.bryntum.com/docs/scheduler/#Scheduler/crud/AbstractCrudManager
 
-The original code is included at ./AjaxTransport.js. You will use this as a reference to create your own class which extends upon the source CrudManager class and replicate the behaviour of the methods sendRequest() and cancelRequest() but using Axios instead of Fetch. 
+The original code for reference is included at ./AjaxTransport.js. Use this file as a reference to create your own overriding class which extends upon the source CrudManager class and replicates the behaviour of the methods sendRequest() and cancelRequest(), using Axios instead of Fetch. 
 
-The data is stroed statically in PHP, so you will need to be run in a webserver, you could use PHP's inbuilt web server as an example!
+The data is stored statically in PHP, so you will need to be run this in a PHP webserver. You could use PHP's inbuilt web server as an example!
 php -S localhost:8000
