@@ -1,3 +1,5 @@
+// Sample code from the source. This isn't referenced anywhere so don't impliment your logic here. 
+
 var AjaxTransport = (Target => class AjaxTransport extends (Target || Base) {
 	static get $name() {
 	  return 'AjaxTransport';
