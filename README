@@ -14,7 +14,8 @@ Out of the box, Bryntum Scheduler's transport layer uses the Fetch API. This wil
 See relevent class's here:
 https://www.bryntum.com/docs/scheduler/#Scheduler/crud/AbstractCrudManager
 
-The original code for reference is included at ./AjaxTransport.js. Use this file as a reference to create your own overriding class which extends upon the source CrudManager class and replicates the behaviour of the methods sendRequest() and cancelRequest(), using Axios instead of Fetch. 
+The original code for reference is included at ./AjaxTransport.js. Use this file as a reference to create your own overriding CrudManger class which extends upon the source CrudManager class and replicates the behaviour of the methods sendRequest() and cancelRequest(), using Axios instead of Fetch.
+Impliment your logic in app.module.js as the demo will need to work exactly as it did before your logic. 
 
 The data is stored statically in PHP, so you will need to be run this in a PHP webserver. You could use PHP's inbuilt web server as an example!
 php -S localhost:8000
