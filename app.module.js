@@ -96,6 +96,11 @@ class MyCrudManager extends CrudManager {
         return Promise.all([ajaxPromise, responsePromise]);
     }
 
+    cancelRequest() {
+        // todo
+        
+    }
+
 }
 
 
